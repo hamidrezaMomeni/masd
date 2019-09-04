@@ -25,7 +25,7 @@ for item in div:
    print(str(counter) + "){}".format(item.text))
    counter += 1
 
-userSelected = int(input("Select movie number: ")) - 1
+userSelected = int(input("enter number of movie: ")) - 1
 movieSelected = div[userSelected]
 if "سریال" in movieSelected.text.strip():
     movieUrl = movieSelected.find("a")["href"]
@@ -39,7 +39,7 @@ if "سریال" in movieSelected.text.strip():
         print(str(counter) + ") {}".format(item.text.strip()) + "\n")
         counter += 1
         
-    userChoose = int(input("choose one: ")) - 1
+    userChoose = int(input("enter number of your coose: ")) - 1
     insideTitle = title[userChoose].text.strip() 
     userSelected = divBody[userChoose]
     blockLinks = userSelected.find("div",{"class":"Block_links"})
@@ -49,7 +49,7 @@ if "سریال" in movieSelected.text.strip():
         print(str(counter) + ") " + item.text)
         print()
         counter += 1
-    partSelected = int(input("Enter part movie: ")) - 1
+    partSelected = int(input("Enter number of part movie: ")) - 1
     urlDownload = movieLinks[partSelected]["href"]
     
     system("mkdir -p '{}' && cd '{}' && wget '{}'".format(nameMovie,nameMovie,urlDownload))

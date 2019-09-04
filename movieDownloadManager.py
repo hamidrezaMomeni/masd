@@ -25,7 +25,7 @@ for item in div:
    print(str(counter) + "){}".format(item.text))
    counter += 1
 
-userSelected = int(input("Select movie number: ")) - 1
+userSelected = int(input("enter number of movie: ")) - 1
 movieSelected = div[userSelected]
 
 movieUrl = movieSelected.find("a")["href"]
@@ -39,7 +39,7 @@ for item in title:
     print(str(counter) + "){}".format(item.text.strip()) + "\n")
     counter += 1
 
-userChoose = int(input("choose one: ")) - 1
+userChoose = int(input("enter number of your choose: ")) - 1
 insideTitle = title[userChoose].text.strip()
 
 userSelected = divBody[userChoose]
@@ -53,7 +53,7 @@ for item in userSelectedDescription:
     print(str(counter) + "){} {}".format(insideTitle,quality))
     counter += 1
     
-userQuality = int(input("Enter quality: ")) - 1
+userQuality = int(input("Enter number of quality: ")) - 1
 
 userSelectedLink = userSelectedLinks[userQuality]
 urlDownload = userSelectedLink.find("a",{"class":"dublboxa"})["href"]
