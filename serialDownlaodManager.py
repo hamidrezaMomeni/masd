@@ -53,7 +53,7 @@ if "سریال" in movieSelected.text.strip():
     partSelected = int(input("Enter part movie: ")) - 1
     urlDownload = movieLinks[partSelected]["href"]
     system("mkdir -p '{}' && cd '{}' && wget '{}'".format(nameMovie,nameMovie,urlDownload))
-    
+    system("notify-send 'Starting Download ...' -a 'movie and serial downloader' ")
     
     
     

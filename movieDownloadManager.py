@@ -59,11 +59,7 @@ userSelectedLink = userSelectedLinks[userQuality]
 urlDownload = userSelectedLink.find("a",{"class":"dublboxa"})["href"]
 print("\n\n\n")
 
-
-
-    
-
 system("mkdir -p '{}' && cd '{}' && wget '{}'".format(nameMovie,nameMovie,urlDownload))
-    
+system("notify-send 'Starting Download ...' -a 'movie and serial downloader' ")
 
 
