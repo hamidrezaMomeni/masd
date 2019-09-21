@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep  3 18:49:00 2019
@@ -52,8 +52,9 @@ if "سریال" in movieSelected.text.strip():
         counter += 1
     partSelected = int(input("Enter part movie: ")) - 1
     urlDownload = movieLinks[partSelected]["href"]
-    system("mkdir -p '{}' && cd '{}' && wget '{}'".format(nameMovie,nameMovie,urlDownload))
     system("notify-send 'Starting Download ...' -a 'movie and serial downloader' ")
+    system("mkdir -p '{}' && cd '{}' && wget '{}'".format(nameMovie,nameMovie,urlDownload))
+    system("notify-send 'Download Finished.' -a 'movie and serial downloader' ")
     
     
     
